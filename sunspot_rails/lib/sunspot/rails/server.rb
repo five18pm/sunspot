@@ -1,3 +1,5 @@
+require 'sunspot/solr/installer.rb'
+
 module Sunspot
   module Rails
     class Server < Sunspot::Solr::Server
@@ -148,7 +150,7 @@ module Sunspot
       #
       def install_solr_home
         unless File.exists?(solr_home)
-          Sunspot::Installer.execute(
+          Sunspot::Solr::Installer.execute(
             solr_home,
             :force => true,
             :verbose => true
